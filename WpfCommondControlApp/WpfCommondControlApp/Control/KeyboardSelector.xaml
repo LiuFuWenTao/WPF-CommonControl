@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="WpfCommondControlApp.Control.KeyboardSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfCommondControlApp.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <local:BigSoftKeyboardUserControl Visibility="Collapsed" x:Name="BigSoftKeyboardUserControl1" Focusable="False" Width="1300" Height="452"></local:BigSoftKeyboardUserControl>
+        <local:LittleSoftKeyboardUserControl Visibility="Collapsed" x:Name="LittleSoftKeyboardUserControl1" Focusable="False" Width="522" Height="452"></local:LittleSoftKeyboardUserControl>
+        <local:KeyboardWithNumber Visibility="Collapsed" x:Name="KeyboardWithNumber1" Focusable="False" Width="522" Height="452"></local:KeyboardWithNumber>
+    </Grid>
+</UserControl>

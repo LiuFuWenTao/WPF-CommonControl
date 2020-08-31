@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCommondControlApp", "WpfCommondControlApp\WpfCommondControlApp.csproj", "{AE02C973-23E3-4FA1-B69C-469BFF7AB8DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE02C973-23E3-4FA1-B69C-469BFF7AB8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE02C973-23E3-4FA1-B69C-469BFF7AB8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE02C973-23E3-4FA1-B69C-469BFF7AB8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE02C973-23E3-4FA1-B69C-469BFF7AB8DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E41C66DE-7A66-46CC-9F18-354CA96A9665}
+	EndGlobalSection
+EndGlobal

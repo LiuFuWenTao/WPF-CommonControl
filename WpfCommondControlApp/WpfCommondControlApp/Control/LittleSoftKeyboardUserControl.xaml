@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="WpfCommondControlApp.Control.LittleSoftKeyboardUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfCommondControlApp.Control"
+             mc:Ignorable="d" 
+              d:DesignHeight="300" d:DesignWidth="300" x:Name="Control">
+    <UserControl.Resources>
+        <FontFamily x:Key="MSYaHei">微软雅黑</FontFamily>
+        <Style x:Key="ImageButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Focusable" Value="False"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#DADADA"></Setter>
+            <Setter Property="Background" Value="#64C4FB">
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="{TemplateBinding BorderBrush}"  Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                                                  Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" 
+                                                                  Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                                  Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
+                                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="#1E9DE7">
+                                </Setter>
+                                <Setter Property="BorderBrush" TargetName="border" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="NormalButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#DADADA"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Focusable" Value="False"></Setter>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="FontSize" Value="32"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="FontFamily" Value="{StaticResource MSYaHei}"></Setter>
+            <Setter Property="Command" Value="{Binding ElementName=Control,Path=InputCommand}"></Setter>
+            <Setter Property="CommandParameter" Value="{Binding Path=Content,RelativeSource={x:Static RelativeSource.Self}}"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#1E9DE7"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="White"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="#BBBBBB"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="White"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid VirtualizingPanel.VirtualizationMode="Recycling">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button  Content="1" Style="{StaticResource NormalButtonStyle}"></Button>
+        <Button Grid.Row="0" Grid.Column="1" Content="2" Style="{StaticResource NormalButtonStyle}"></Button>
+        <Button Grid.Row="0" Grid.Column="2" Content="3" Style="{StaticResource NormalButtonStyle}"></Button>
+        <Button Grid.Row="1" Grid.Column="0"  Content="4" Style="{StaticResource NormalButtonStyle}"></Button>
+        <Button Grid.Row="1" Grid.Column="1" Content="5" Style="{StaticResource NormalButtonStyle}"></Button>
+        <Button Grid.Row="1" Grid.Column="2" Content="6" Style="{StaticResource NormalButtonStyle}"/>
+        <Button Grid.Row="2" Grid.Column="0"  Content="7" Style="{StaticResource NormalButtonStyle}"></Button>
+        <Button Grid.Row="2" Grid.Column="1" Content="8" Style="{StaticResource NormalButtonStyle}"></Button>
+        <Button Grid.Row="2" Grid.Column="2" Content="9" Style="{StaticResource NormalButtonStyle}"></Button>
+        <Button Grid.Row="3" Grid.Column="0" Content="0" Style="{StaticResource NormalButtonStyle}"></Button>
+        <!--样式需改进 这种方式是临时 真正的样式不能这么写-->
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"   Style="{StaticResource ImageButtonStyle}" 
+                    Command="{Binding ElementName=Control,Path=InputCommand}"
+                    CommandParameter="Clear" Content="清空"
+                    Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25"/>
+            <Button Grid.Column="1" Style="{StaticResource ImageButtonStyle}" 
+                    Command="{Binding ElementName=Control,Path=InputCommand}"
+                    CommandParameter="Backspace" Content="删除"
+                    Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25"/>
+            <!--<controlExtend:CommonButton  Grid.Column="1"  Background="#64C4FB" Margin="5" BorderThickness="1"
+                                        BorderBrush="#64C4FB" Focusable="False"
+                                        CornerRadius="8" NormalImageSource="../Images/delete1.png"
+                                        Command="{Binding ElementName=Control,Path=InputCommand}" 
+                                        CommandParameter="Backspace"/>-->
+        </Grid>
+        <local:CommonButton Grid.Row="3" Grid.ColumnSpan="2" FontSize="30" Grid.Column="1"
+                                    Background="White" CornerRadius="8"  Content="X" Margin="5" BorderBrush="#DADADA" BorderThickness="1"
+                                    Focusable="False"
+                                    CommandParameter="X"></local:CommonButton>
+    </Grid>
+</UserControl>
