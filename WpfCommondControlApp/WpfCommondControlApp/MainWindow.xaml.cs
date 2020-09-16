@@ -24,5 +24,15 @@ namespace WpfCommondControlApp
         {
             InitializeComponent();
         }
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            Console.WriteLine("dfsdfsdfsdf");
+        }
+
+        //private void Window_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    //this.moveLineByKeyboardOrMouse.CallKeyDown(e);
+        //}
     }
 }

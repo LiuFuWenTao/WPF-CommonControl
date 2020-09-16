@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="WpfCommondControlApp.Control.MoveLineByKeyboardOrMouse"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfCommondControlApp.Control"
+             mc:Ignorable="d" Background="Transparent"
+             Height="350" Width="525" KeyDown="_CanvasBackGround_KeyDown"
+    MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseMove="Window_MouseMove">
+
+    <Canvas Name="_CanvasBackGround" Width="525" Height="350" Background="Black" 
+            MouseLeftButtonDown="_CanvasBackGround_MouseLeftButtonDown">
+
+        <Line x:Name="Top" Stroke="#FFF1194A" StrokeThickness="3" X1="120" Y1="200" X2="400" Y2="200"
+              MouseLeftButtonDown="Top_MouseLeftButtonDown" Cursor="Hand" Focusable="True"/>
+
+
+        <Line x:Name="Left" Stroke="#FF00FFD1" StrokeThickness="3" X1="120" Y1="200" X2="120" Y2="320"
+              MouseLeftButtonDown="Left_MouseLeftButtonDown" Cursor="Hand"/>
+        <Line x:Name="Right" Stroke="#FF00FFD1" StrokeThickness="3" X1="400" Y1="200" X2="400" Y2="320" 
+              MouseLeftButtonDown="Right_MouseLeftButtonDown" Cursor="Hand"/>
+
+    </Canvas>
+</UserControl>
+
