@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfCommondControlApp
+namespace 代码测试
 {
     /// <summary>
-    /// MainWindow.xaml 的交互逻辑
+    /// LoadingTextBlock.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoadingTextBlock : UserControl
     {
-        public MainWindow()
+        public LoadingTextBlock()
         {
             InitializeComponent();
         }
-
-        private void Grid_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-        }
-
-        //private void Window_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    //this.moveLineByKeyboardOrMouse.CallKeyDown(e);
-        //}
     }
 }

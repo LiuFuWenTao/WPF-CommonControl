@@ -60,6 +60,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Control\BigSoftKeyboardUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\CheckItemControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\KeyboardSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\KeyboardWithNumber.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\LittleSoftKeyboardUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\LoadingTextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\LoadingWait.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Control\MoveLineByKeyboardOrMouse.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -72,13 +100,38 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Control\BigSoftKeyboardUserControl.xaml.cs">
+      <DependentUpon>BigSoftKeyboardUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CheckItemControl.xaml.cs">
+      <DependentUpon>CheckItemControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\CommonButton.cs" />
+    <Compile Include="Control\CommonTextBox.cs" />
+    <Compile Include="Control\KeyboardSelector.xaml.cs">
+      <DependentUpon>KeyboardSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\KeyboardWithNumber.xaml.cs">
+      <DependentUpon>KeyboardWithNumber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LittleSoftKeyboardUserControl.xaml.cs">
+      <DependentUpon>LittleSoftKeyboardUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LoadingTextBlock.xaml.cs">
+      <DependentUpon>LoadingTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LoadingWait.xaml.cs">
+      <DependentUpon>LoadingWait.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Control\MoveLineByKeyboardOrMouse.xaml.cs">
       <DependentUpon>MoveLineByKeyboardOrMouse.xaml</DependentUpon>
     </Compile>
     <Compile Include="Convert\CommonButtonPropertyConverter.cs" />
+    <Compile Include="Convert\FalseToVisbilityConverter.cs" />
+    <Compile Include="Convert\RadiusCalculationConverter.cs" />
     <Compile Include="Convert\StringToCaseConverter.cs" />
     <Compile Include="Convert\SymbolToMoreConverter.cs" />
+    <Compile Include="Convert\TureToVisbilityConverter.cs" />
     <Compile Include="Helper\ByteChangeHelper.cs" />
     <Compile Include="Helper\CSVHelper.cs" />
     <Compile Include="Helper\ProcessHelper.cs" />

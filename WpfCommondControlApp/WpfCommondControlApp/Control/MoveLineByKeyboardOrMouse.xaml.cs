@@ -20,6 +20,7 @@ namespace WpfCommondControlApp.Control
     /// </summary>
     public partial class MoveLineByKeyboardOrMouse : UserControl
     {
+        private int i = 0;
         public MoveLineByKeyboardOrMouse()
         {
             InitializeComponent();
@@ -261,7 +262,14 @@ namespace WpfCommondControlApp.Control
 
         private void _CanvasBackGround_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Top.Focus();
+            ck.Focus();
+        }
+
+        private void Canvas_MouseLeftButtonUp(object sender, MouseEventArgs e)
+        {
+            _topIsSelect = false;
+            _leftIsSelect = false;
+            _rightIsSelect = false;
         }
     }
 }
