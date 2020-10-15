@@ -8,12 +8,13 @@
              Height="350" Width="525"  MouseLeave="Canvas_MouseLeftButtonUp"
     MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseMove="Window_MouseMove">
 
-    <Canvas Name="_CanvasBackGround" Width="525" Height="350" Background="Wheat" KeyDown="_CanvasBackGround_KeyDown"
+    <Canvas Name="_CanvasBackGround" Width="525" Height="350" Background="White" KeyDown="_CanvasBackGround_KeyDown"
             MouseLeftButtonDown="_CanvasBackGround_MouseLeftButtonDown">
         <CheckBox Name="ck" Focusable="True" Height="0" Width="0"/>
         <Line x:Name="Top" Stroke="#FFF1194A" StrokeThickness="3" X1="120" Y1="200" X2="400" Y2="200"
               MouseLeftButtonDown="Top_MouseLeftButtonDown" Cursor="Hand"/>
-
+        <!--<Line x:Name="Bottom" Stroke="#FFF1194A" StrokeThickness="3" X1="120" Y1="320" X2="400" Y2="320"
+              MouseLeftButtonDown="Top_MouseLeftButtonDown" Cursor="Hand"/>-->
 
         <Line x:Name="Left" Stroke="#FF00FFD1" StrokeThickness="3" X1="120" Y1="200" X2="120" Y2="320"
               MouseLeftButtonDown="Left_MouseLeftButtonDown" Cursor="Hand"/>

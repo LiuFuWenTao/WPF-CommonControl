@@ -101,11 +101,11 @@ namespace WpfCommondControlApp.Helper
             {
                 _lastNode = targetElements.First();
                 //多个节点的类型，则继续寻找
-                var sourceKey = sourceItem.Attributes("Key");
+                var sourceKey = sourceItem.Attribute("Key");
                 foreach (var e in targetElements)
                 {
-                    //默认一个把，作为一个单一判断量.也先认为全部存在吧
-                    if (e.Attribute("Key") == sourceKey)
+                    //定位得条件变得更加苛刻，key相同，且父类得节点名称相同
+                    if (e.Attribute("Key").ToString() == sourceKey.ToString() && e.Parent.Name == sourceItem.Parent.Name)
                     {
                         SetAttributes(sourceItem, e);
                         break;
