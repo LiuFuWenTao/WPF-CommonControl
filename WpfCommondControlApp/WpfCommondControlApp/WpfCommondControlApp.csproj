@@ -60,6 +60,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="创意控件\Loading.xaml.cs">
+      <DependentUpon>Loading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="创意控件\Loading1Control.xaml.cs">
+      <DependentUpon>Loading1Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="创意控件\LoadingButton.xaml.cs">
+      <DependentUpon>LoadingButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="创意控件\LoadingComplete.xaml.cs">
+      <DependentUpon>LoadingComplete.xaml</DependentUpon>
+    </Compile>
     <Page Include="Control\CheckItemControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,6 +133,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="创意控件\Loading.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="创意控件\Loading1Control.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="创意控件\LoadingButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="创意控件\LoadingComplete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="代码测试.创意控件.LoadingComplete"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:代码测试.创意控件"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoaded1" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Line.X1)" Storyboard.TargetName="line">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="45"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Line.X2)" Storyboard.TargetName="line">
+                <EasingDoubleKeyFrame KeyTime="0" Value="45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="80"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Line.Y1)" Storyboard.TargetName="line">
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Line.Y2)" Storyboard.TargetName="line">
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:2" Value="30"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Line.X1)" Storyboard.TargetName="line1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="28"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Line.X2)" Storyboard.TargetName="line1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="28"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="45"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Line.Y1)" Storyboard.TargetName="line1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="55"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Line.Y2)" Storyboard.TargetName="line1">
+                <EasingDoubleKeyFrame KeyTime="0" Value="55"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoaded1}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Grid x:Name="grid">
+        <Ellipse Fill="#FFBBC3C2" HorizontalAlignment="Left" Height="100" 
+                 Stroke="#FFF8FCFD" StrokeThickness="2" VerticalAlignment="Top" Width="100"/>
+        <Line x:Name="line" X1="45" Y1="70" X2="45" Y2="70" StrokeThickness="5" Fill="#FF0DF060" Stroke="#FF0DF060" RenderTransformOrigin="0.5,0.5">
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+        <Line x:Name="line1" X1="28" Y1="55" X2="28" Y2="55" StrokeThickness="5" Fill="#FF0DF060" Stroke="#FF0DF060" RenderTransformOrigin="0.5,0.5">
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+    </Grid>
+</UserControl>
