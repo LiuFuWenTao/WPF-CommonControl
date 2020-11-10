@@ -60,6 +60,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Control\AnimationEnterAndLeave.xaml.cs">
+      <DependentUpon>AnimationEnterAndLeave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\DropListBoxItem.xaml.cs">
+      <DependentUpon>DropListBoxItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Convert\TakeHalfconverter.cs" />
+    <Compile Include="Model\PercentageData.cs" />
     <Compile Include="创意控件\Loading.xaml.cs">
       <DependentUpon>Loading.xaml</DependentUpon>
     </Compile>
@@ -72,9 +80,23 @@
     <Compile Include="创意控件\LoadingComplete.xaml.cs">
       <DependentUpon>LoadingComplete.xaml</DependentUpon>
     </Compile>
+    <Compile Include="创意控件\ArcDiagramUserControl.xaml.cs">
+      <DependentUpon>ArcDiagramUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="创意控件\ProgressBarUserControl.xaml.cs">
+      <DependentUpon>ProgressBarUserControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Control\AnimationEnterAndLeave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Control\CheckItemControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\DropListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Control\LoadingTextBlock.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -146,6 +168,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="创意控件\LoadingComplete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="创意控件\ArcDiagramUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="创意控件\ProgressBarUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

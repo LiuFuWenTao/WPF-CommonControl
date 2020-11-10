@@ -214,7 +214,7 @@ namespace WpfCommondControlApp.Control
                         Point mousePoint = e.GetPosition(this._CanvasBackGround);
                         if (mousePoint.Y > _maxHeight || mousePoint.Y < _minHeight)
                         {
-                            return;
+                            goto END;
                         }
                         Top.Y1 = mousePoint.Y;
                         Top.Y2 = mousePoint.Y;
@@ -229,7 +229,7 @@ namespace WpfCommondControlApp.Control
                         Point mousePoint = e.GetPosition(this._CanvasBackGround);
                         if (mousePoint.X > _maxWidth || mousePoint.X < _minWidth)
                         {
-                            return;
+                            goto END;
                         }
                         Left.X1 = mousePoint.X;
                         Left.X2 = mousePoint.X;
@@ -242,7 +242,7 @@ namespace WpfCommondControlApp.Control
                         Point p = e.GetPosition(_CanvasBackGround);
                         if (p.X > _maxWidth || p.X < _minWidth)
                         {
-                            return;
+                            goto END;
                         }
                         Right.X1 = p.X;
                         Right.X2 = p.X;
@@ -252,6 +252,12 @@ namespace WpfCommondControlApp.Control
                 default:
                     break;
             }
+            // 点击完毕之后重新设置聚焦，一定要这样的异步，不然会失焦
+            END:
+            Application.Current.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                this.ck.Focus();
+            }));
         }
 
         public void CallKeyDown(KeyEventArgs e)

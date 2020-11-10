@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="WpfCommondControlApp.Control.AnimationEnterAndLeave"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfCommondControlApp.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Border Name="aboutBorder" Margin="0,1" Width="100"  Background="Transparent" d:IsLocked="True" Visibility="Visible">
+            <Grid x:Name="grid" Background="#FF753ADC" HorizontalAlignment="Stretch" d:IsLocked="True" 
+                       >
+                <StackPanel x:Name="stackPanel1" Orientation="Horizontal" Height="60" Grid.Row="1" MouseEnter="stackPanel1_MouseEnter"
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom" d:IsLocked="True" >
+                    <TextBlock Text="about" Foreground="White" Margin="10,0,0,0" VerticalAlignment="Center" d:IsLocked="True"/>
+                </StackPanel>
+                <Popup x:Name="aboutPop" Placement="Top" PlacementTarget="{Binding ElementName=stackPanel1}"
+                       AllowsTransparency="True" Focusable="True" d:IsLocked="True" >
+
+                    <StackPanel x:Name="stackPanel" Background="#B0080F2A" MinWidth="100" Grid.Row="0"
+                            RenderTransformOrigin="0.5,0.5" Visibility="Visible" MouseLeave="stackPanel_MouseLeave" 
+                                d:IsLocked="True">
+                        <StackPanel.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform x:Name="ss" Y="10"/>
+                            </TransformGroup>
+                        </StackPanel.RenderTransform>
+                        <Button x:Name="button" Template="{StaticResource textButton}" 
+                                Focusable="False" d:IsLocked="True">
+
+                            <TextBlock Text="versionQuery" Margin="15,10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" d:IsLocked="True"/>
+                        </Button>
+                        <Button Name="activateButton" Template="{StaticResource textButton}" Focusable="False" d:IsLocked="True">
+                            <TextBlock Text="activate" Margin="15,10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" d:IsLocked="True"/>
+                        </Button>
+                        <Button Name="CheckButton" Template="{StaticResource textButton}" Focusable="False" d:IsLocked="True">
+                            <TextBlock Text="check" Margin="15,10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" d:IsLocked="True"/>
+                        </Button>
+                        <Button Name="CheckButton1" Template="{StaticResource textButton}" Focusable="False" d:IsLocked="True">
+                            <TextBlock Text="check" Margin="15,10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" d:IsLocked="True"/>
+                        </Button>
+                        <Button Name="CheckButton2" Template="{StaticResource textButton}" Focusable="False" d:IsLocked="True">
+                            <TextBlock Text="check" Margin="15,10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" d:IsLocked="True"/>
+                        </Button>
+                        <Button Name="CheckButton3" Template="{StaticResource textButton}" Focusable="False" d:IsLocked="True">
+                            <TextBlock Text="check" Margin="15,10" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" d:IsLocked="True"/>
+                        </Button>
+                    </StackPanel>
+                </Popup>
+            </Grid>
+        </Border>
+
+    </Grid>
+</UserControl>
