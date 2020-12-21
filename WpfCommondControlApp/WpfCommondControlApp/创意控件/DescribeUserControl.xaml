@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="WpfCommondControlApp.创意控件.DescribeUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfCommondControlApp.创意控件"
+             x:Name="MyUC"
+             mc:Ignorable="d" d:DesignHeight="200" d:DesignWidth="300" Background="#FF213D44"
+             Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Storyboard x:Key="OnMouseEnter1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="MyDoubleEllipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="360"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="720"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="MyDoubleEllipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="MyDoubleEllipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <PointAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransformOrigin)" Storyboard.TargetName="MyDoubleEllipse">
+                <EasingPointKeyFrame KeyTime="0" Value="0.5,0.5"/>
+                <EasingPointKeyFrame KeyTime="0:0:0.5" Value="0.5,0.5"/>
+            </PointAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Grid>
+        <Border x:Name="MyBorder" BorderBrush="#38ff82" BorderThickness="1" Height="60" Width="{Binding Path=Width,ElementName=MyUC}" VerticalAlignment="Top"
+                CornerRadius="10" >
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                <TextBlock Text="{Binding Path=Describe,ElementName=MyUC}" Margin="10 0 0 0"
+                            TextWrapping="Wrap" Foreground="#38ff82"/>
+                <TextBox BorderThickness="0" Background="Transparent" Text="{Binding Path=DescribeValue,ElementName=MyUC}" Foreground="#38ff82"
+                         Margin="10 0 0 0"/>
+            </StackPanel>
+        </Border>
+        <StackPanel x:Name="MyStackPanel" Height="10" Width="10" Background="#FF213D44"
+                    Margin="212.5,59,0,0" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left" >
+            <Line Y2="10" Stroke="#38ff82" />
+            <Line Y2="10" Stroke="#1cc2eb" X1="5" X2="5" Y1="1"/>
+        </StackPanel>
+        <Line x:Name="MyLine1" Stroke="#1cc2eb" X1="218.2" X2="250" Y1="69" Y2="100" ></Line>
+        <Line x:Name="MyLine2" Stroke="#1cc2eb" X1="250" X2="250" Y1="100" Y2="120" ></Line>
+        <local:MydoubleEllipseControl x:Name="MyDoubleEllipse" Height="20" Width="20"
+                                      Margin="240,125,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <local:MydoubleEllipseControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </local:MydoubleEllipseControl.RenderTransform>
+        </local:MydoubleEllipseControl>
+        <!--<Ellipse Stroke="#38ff82" Height="18" Width="18" Margin="241,122,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
+    </Grid>
+</UserControl>

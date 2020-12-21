@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCommondControlApp" xmlns:control="clr-namespace:WpfCommondControlApp.Control"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" x:Class="WpfCommondControlApp.MainWindow"
-    xmlns:uc ="clr-namespace:WpfCommondControlApp.Control"    
+    xmlns:uc ="clr-namespace:WpfCommondControlApp.Control"
+    xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+    xmlns:cykj ="clr-namespace:代码测试.创意控件"
+    xmlns:cykj1 ="clr-namespace:WpfCommondControlApp.创意控件"
     mc:Ignorable="d" 
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
@@ -25,7 +28,11 @@
                                                         Opacity="0.5"  
                                                         Height="50" Width="50"
                         />-->
-
-        <uc:MoveLineByKeyboardOrMouse x:Name="moveLineByKeyboardOrMouse"></uc:MoveLineByKeyboardOrMouse>
+        <uc:MoveLineByKeyboardOrMouse x:Name="moveLineByKeyboardOrMouse"  Visibility="Collapsed"></uc:MoveLineByKeyboardOrMouse>
+        <cykj:Loading1Control Visibility="Collapsed"></cykj:Loading1Control>
+        <uc:DoubleTextBox Width="100" Background="Black" Height="50" input:InputMethod.IsInputMethodEnabled="False"></uc:DoubleTextBox>
+        <cykj1:DescribeUserControl  Height="200" Width="400" Background="Transparent" Describe="车身的高度" DescribeValue="100"
+                                   X1="150" Y1="59" X2="155" Y2="69" X3="50" Y3="90" X4="50" Y4="120" Margin="23,34,0,0" ColorOverlay="#FF213D44"
+                                   HorizontalAlignment="Left" VerticalAlignment="Top"></cykj1:DescribeUserControl>
     </Grid>
 </Window>
